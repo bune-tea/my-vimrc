@@ -1,4 +1,3 @@
-" setting
 "文字コードをUFT-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -17,12 +16,12 @@ let mapleader = "\<Space>"
 " 見た目系
 " 行番号を表示
 set number
-" 現在の行を強調表示
-set cursorline
 " インデントはスマートインデント
 set smartindent
 " ビープ音を消す
 set belloff=all
+" 行を強調表示
+set cursorline
 " 括弧入力時の対応する括弧を表示
 set showmatch
 " ステータスラインを常に表示
@@ -34,25 +33,13 @@ nnoremap j gj
 nnoremap k gk
 " シンタックスハイライトの有効化
 syntax enable
-" 括弧を自動的に補完する
-inoremap <silent> ( ()<Left>
-inoremap <silent> () ()
-inoremap <silent> (<Enter> (<CR>)<ESC><S-o>
-inoremap <silent> { {}<Left>
-inoremap <silent> {} {}
-inoremap <silent> {<Enter> {<CR>}<ESC><S-o>
-inoremap <silent> " ""<Left>
-inoremap <silent> "" ""
-inoremap <silent> "<Enter> "<CR>"<ESC><S-o>
-inoremap <silent> ' ''<Left>
-inoremap <silent> '' ''
-inoremap <silent> '<Enter> '<CR>'<ESC><S-o>
-
-
-" タブをブラウザ風のキーバインドに割り当てる
-nnoremap <silent> <C-t> :tabnew<cr> "C-t で新しいタブ
-nnoremap <silent> <C-tab> :tabnext<cr> "C-tab で次のタブ
-nnoremap <silent> <C-S-tab> :tabprevious<cr> "C-S-tab で後ろのタブ
+" カラースキームの設定
+if (has("termguicolors"))
+ set termguicolors
+endif
+colorscheme tender
+" lightlineの設定
+let g:lightline = { 'colorscheme': 'tender' }
 
 " Tab系
 " Tab文字を半角スペースにする
@@ -73,9 +60,29 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
+
+" キーバインド系
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " insertモード時にjkでノーマルモードに移行
 inoremap jk <Esc>
 " <S-t>でターミナルが起動するようにする
 nnoremap <Leader>t :bo term<CR>
+" タブをブラウザ風のキーバインドに割り当てる
+nnoremap <silent> <C-t> :tabnew<cr> "C-t で新しいタブ
+nnoremap <silent> <C-tab> :tabnext<cr> "C-tab で次のタブ
+nnoremap <silent> <C-S-tab> :tabprevious<cr> "C-S-tab で後ろのタブ
+" <S-e>でnerdtreeを起動
+nnoremap <Leader>e :NERDTreeToggle<cr>
+
+" プラグイン
+packadd vim-jetpack
+call jetpack#begin()
+Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
+Jetpack 'cohama/lexima.vim'
+Jetpack 'jacoborus/tender.vim'
+Jetpack 'itchyny/lightline.vim'
+Jetpack 'flazz/vim-colorschemes'
+Jetpack 'preservim/nerdtree'
+Jetpack 'tpope/vim-fugitive'
+call jetpack#end()
