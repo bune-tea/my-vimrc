@@ -1,88 +1,67 @@
-"文字コードをUFT-8に設定
 set fenc=utf-8
-" バックアップファイルを作らない
 set nobackup
-" スワップファイルを作らない
 set noswapfile
-" 編集中のファイルが変更されたら自動で読み直す
 set autoread
-" バッファが編集中でもその他のファイルを開けるように
 set hidden
-" 入力中のコマンドをステータスに表示する
 set showcmd
-" リーダーキーを\<Space>に設定
+set autoindent
 let mapleader = "\<Space>"
+set helplang=ja,en
 
-" 見た目系
-" 行番号を表示
 set number
-" インデントはスマートインデント
 set smartindent
-" ビープ音を消す
 set belloff=all
-" 行を強調表示
 set cursorline
-" 括弧入力時の対応する括弧を表示
 set showmatch
-" ステータスラインを常に表示
 set laststatus=2
-" コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" シンタックスハイライトの有効化
 syntax enable
-" カラースキームの設定
-if (has("termguicolors"))
- set termguicolors
-endif
-colorscheme tender
-" lightlineの設定
-let g:lightline = { 'colorscheme': 'tender' }
+colorscheme materialtheme
+let g:lightline = {'colorscheme':'wombat',}
 
-" Tab系
-" Tab文字を半角スペースにする
 set expandtab
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
+set softtabstop=4
 set tabstop=4
-" 行頭でのTab文字の表示幅
 set shiftwidth=4
+if has("autocmd")
+  filetype plugin on
+  filetype indent on
+  autocmd FileType c setlocal expandtab
+  autocmd FileType python setlocal et sts=2 sw=2 ts=2
+endif
 
-" 検索系
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
 set incsearch
-" 検索時に最後まで行ったら最初に戻る
 set wrapscan
-" 検索語をハイライト表示
 set hlsearch
 
-" キーバインド系
-" ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-" insertモード時にjkでノーマルモードに移行
 inoremap jk <Esc>
-" <S-t>でターミナルが起動するようにする
 nnoremap <Leader>t :bo term<CR>
-" タブをブラウザ風のキーバインドに割り当てる
-nnoremap <silent> <C-t> :tabnew<cr> "C-t で新しいタブ
-nnoremap <silent> <C-tab> :tabnext<cr> "C-tab で次のタブ
-nnoremap <silent> <C-S-tab> :tabprevious<cr> "C-S-tab で後ろのタブ
-" <S-e>でnerdtreeを起動
+nnoremap <silent> <C-t> :tabnew<cr> 
+nnoremap <silent> <C-tab> :tabnext<cr> 
+nnoremap <silent> <C-S-tab> :tabprevious<cr> 
 nnoremap <Leader>e :NERDTreeToggle<cr>
 
-" プラグイン
 packadd vim-jetpack
 call jetpack#begin()
-Jetpack 'tani/vim-jetpack', {'opt': 1} "bootstrap
+" Jetpackのbootstrap
+Jetpack 'tani/vim-jetpack', {'opt': 1}
+" (や"を自動で補完する
 Jetpack 'cohama/lexima.vim'
-Jetpack 'jacoborus/tender.vim'
+" ステータスラインの装飾
 Jetpack 'itchyny/lightline.vim'
-Jetpack 'flazz/vim-colorschemes'
+" タブツリーの表示
 Jetpack 'preservim/nerdtree'
+" gitを便利に使えるようにするやつ
 Jetpack 'tpope/vim-fugitive'
+" カラースキーム
+Jetpack 'jdkanani/vim-material-theme'
+" ドキュメントの日本語化
+Jetpack 'vim-jp/vimdoc-ja'
+" コメントON/OFFを手軽に実行
+Jetpack 'tomtom/tcomment_vim'
 call jetpack#end()
