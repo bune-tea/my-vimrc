@@ -86,4 +86,6 @@ Jetpack 'kaicataldo/material.vim', { 'branch': 'main' }
 Jetpack 'vim-jp/vimdoc-ja'
 " コメントON/OFFを手軽に実行
 Jetpack 'tomtom/tcomment_vim'
+" 言語パック
+Jetpack 'sheerun/vim-polyglot'
 call jetpack#end()
