@@ -74,6 +74,8 @@ Jetpack 'cohama/lexima.vim'
 Jetpack 'itchyny/lightline.vim'
 " タブツリーの表示
 Jetpack 'preservim/nerdtree'
+" タブツリーにアイコンを追加
+Jetpack 'ryanoasis/vim-devicons'
 " gitを便利に使えるようにするやつ
 Jetpack 'tpope/vim-fugitive'
 " カラースキーム
