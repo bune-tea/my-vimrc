@@ -78,6 +78,8 @@ Jetpack 'preservim/nerdtree'
 Jetpack 'ryanoasis/vim-devicons'
 " gitを便利に使えるようにするやつ
 Jetpack 'tpope/vim-fugitive'
+" gitのdiffが行番号の左に見える
+Jetpack 'airblade/vim-gitgutter'
 " カラースキーム
 Jetpack 'kaicataldo/material.vim', { 'branch': 'main' }
 " ドキュメントの日本語化
