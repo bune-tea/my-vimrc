@@ -29,9 +29,10 @@ nnoremap k gk
 syntax enable
 " カラースキームをマテリアルテーマに
 set termguicolors
-colorscheme material-theme
+let g:material_theme_style = 'ocian'
+colorscheme material
 " lightlineの色の設定
-let g:lightline = {'colorscheme':'wombat',}
+let g:lightline = {'colorscheme':'material_vim',}
 
 " タブ関係
 " タブを空白に置き換える
@@ -76,7 +77,7 @@ Jetpack 'preservim/nerdtree'
 " gitを便利に使えるようにするやつ
 Jetpack 'tpope/vim-fugitive'
 " カラースキーム
-Jetpack 'jdkanani/vim-material-theme'
+Jetpack 'kaicataldo/material.vim', { 'branch': 'main' }
 " ドキュメントの日本語化
 Jetpack 'vim-jp/vimdoc-ja'
 " コメントON/OFFを手軽に実行
