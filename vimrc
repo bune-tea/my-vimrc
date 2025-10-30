@@ -11,8 +11,6 @@ set helplang=ja,en
 " 見た目の設定
 " 行番号の表示
 set number
-" インデントの自動挿入
-set smartindent
 " ベルを鳴らさない
 set belloff=all
 " 行を強調する
@@ -38,16 +36,17 @@ let g:lightline = {'colorscheme':'material_vim',}
 " タブを空白に置き換える
 set expandtab
 " タブ幅をスペース4つに
-set softtabstop=4
 set tabstop=4
+set softtabstop=4
 set shiftwidth=4
+" インデントの自動挿入
+set smartindent
 " filetypeごとの設定
-if has("autocmd")
-  filetype plugin on
-  filetype indent on
-  autocmd FileType c setlocal et
-  autocmd FileType python setlocal et sts=2 sw=2 ts=2
-endif
+augroup fileTypeIndent
+    autocmd!
+    autocmd BufNewFile,BufRead *.py setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup ENDendif
 
 " 検索系
 set smartcase
