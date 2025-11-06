@@ -57,13 +57,22 @@ set wrapscan
 set hlsearch
 
 " マッピング系
+" <Esc><Esc>でハイライトをリセット
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" jkでノーマルモードに入る
 inoremap jk <Esc>
+" <Leader>tでターミナルを開く
 nnoremap <Leader>t :bo term<CR>
+" Ctrl-Tでタブを開く
 nnoremap <silent> <C-t> :tabnew<CR> 
-nnoremap <silent> <C-tab> :tabnext<CR> 
-nnoremap <silent> <C-S-tab> :tabprevious<CR> 
+" <Leader>tでNERDTreeを起動
 nnoremap <Leader>e :NERDTreeToggle<CR>
+" Uでredo
+nnoremap U <c-r>
+" <したときに前回のvisual選択を保持
+xnoremap < <gv
+" >したときに前回のvisual選択を保持
+xnoremap > >gv
 
 packadd vim-jetpack
 call jetpack#begin()
