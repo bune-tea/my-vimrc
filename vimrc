@@ -1,11 +1,16 @@
+" コーディングをutf8に
 set fenc=utf-8
+" ファイルのバックアップを取らない
 set nobackup
-set noswapfile
+" vimの外でファイルの中身が変更された際に自動で読み直す
 set autoread
+" バッファを隠す
 set hidden
+" コマンドを画面の最下部に表示する
 set showcmd
-set autoindent
+" リーダーキーをスペースに設定
 let mapleader = "\<Space>"
+" ヘルプを日本語で表示
 set helplang=ja,en
 
 " 見た目の設定
@@ -21,14 +26,15 @@ set showmatch
 set laststatus=2
 " 補完機能の設定
 set wildmode=list:longest
+" 行を折り返して移動する
 nnoremap j gj
 nnoremap k gk
 " シンタックスハイライトを有効に
 syntax enable
 " カラースキームをマテリアルテーマに
 set termguicolors
-let g:material_theme_style = 'ocian'
 colorscheme material
+let g:material_theme_style = 'ocian'
 " lightlineの色の設定
 let g:lightline = {'colorscheme':'material_vim',}
 
@@ -39,6 +45,8 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+" 行を挿入したときに今の行とインデントを揃える
+set autoindent
 " インデントの自動挿入
 set smartindent
 " インデントの見た目変更
@@ -51,9 +59,13 @@ augroup fileTypeIndent
 augroup ENDendif
 
 " 検索系
+" 小文字だけで検索したときに大文字小文字を区別しない
 set smartcase
+" 検索コマンドを打ち込んでいる間もパターンを強調する
 set incsearch
+" ファイル検索が末尾まで行ったら先頭から再び検索する
 set wrapscan
+" :nohlsearchをするまで強調する
 set hlsearch
 
 " マッピング系
