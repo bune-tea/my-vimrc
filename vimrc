@@ -41,6 +41,8 @@ set softtabstop=4
 set shiftwidth=4
 " インデントの自動挿入
 set smartindent
+" インデントの見た目変更
+let g:indentLine_char = '|'
 " filetypeごとの設定
 augroup fileTypeIndent
     autocmd!
@@ -87,4 +89,6 @@ Jetpack 'vim-jp/vimdoc-ja'
 Jetpack 'tomtom/tcomment_vim'
 " 言語パック
 Jetpack 'sheerun/vim-polyglot'
+" インデントを見やすく
+Jetpack 'Yggdroot/indentLine'
 call jetpack#end()
