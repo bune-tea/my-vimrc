@@ -85,7 +85,21 @@ nnoremap U <c-r>
 xnoremap < <gv
 " >したときに前回のvisual選択を保持
 xnoremap > >gv
+" 英字キーボードように<Leader>;でコマンドラインモードに移行
+nnoremap <Leader>; :
+" ターミナルモード時にEscでノーマルモードに移行
+tnoremap <Esc> <C-w>N
+" <Leader>+hjklで画面移動
+nnoremap <Leader>h <c-w>h
+nnoremap <Leader>j <c-w>j
+nnoremap <Leader>k <c-w>k
+nnoremap <Leader>l <c-w>l
 
+" その他
+" ターミナルモード移行時に自動的にノーマルモードにする
+autocmd WinEnter * if &buftype ==# 'terminal' | normal i
+
+" vim-jetpackでプラグインを管理
 packadd vim-jetpack
 call jetpack#begin()
 " Jetpackのbootstrap
