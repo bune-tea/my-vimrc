@@ -45,6 +45,9 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+" タブ幅を一括で変更するコマンドを作成
+command CT2 set ts=2 sts=2 sw=2
+command CT4 set ts=4 sts=4 sw=4
 " 行を挿入したときに今の行とインデントを揃える
 set autoindent
 " インデントの自動挿入
