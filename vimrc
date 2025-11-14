@@ -129,4 +129,6 @@ Jetpack 'tomtom/tcomment_vim'
 Jetpack 'sheerun/vim-polyglot'
 " インデントを見やすく
 Jetpack 'Yggdroot/indentLine'
+" ''とか()を便利にするやつ
+Jetpack 'tpope/vim-surround'
 call jetpack#end()
