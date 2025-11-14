@@ -76,6 +76,8 @@ set hlsearch
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " jkでノーマルモードに入る
 inoremap jk <Esc>
+" ターミナルモード時にjkでターミナルノーマルモードに移行
+tnoremap jk <C-w>N
 " <Leader>tでターミナルを開く
 nnoremap <Leader>t :bo term<CR>
 " Ctrl-Tでタブを開く
@@ -90,8 +92,6 @@ xnoremap < <gv
 xnoremap > >gv
 " 英字キーボードように<Leader>;でコマンドラインモードに移行
 nnoremap <Leader>; :
-" ターミナルモード時にEscでノーマルモードに移行
-tnoremap <Esc> <C-w>N
 " <Leader>+hjklで画面移動
 nnoremap <Leader>h <c-w>h
 nnoremap <Leader>j <c-w>j
