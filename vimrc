@@ -36,7 +36,20 @@ set termguicolors
 colorscheme material
 let g:material_theme_style = 'ocian'
 " lightlineの色の設定
-let g:lightline = {'colorscheme':'material_vim',}
+let g:lightline = {
+  \ 'colorscheme': 'material_vim',
+  \ 'active': {
+  \   'left': [ [ 'mode', 'paste'],
+  \             [ 'readonly', 'filename', 'filetype', 'modified'] ], 
+  \   'right': [ [ 'lineinfo' ],
+  \              [ 'percent' ],
+  \              [ 'gitbranch', 'fileformat', 'fileencoding' ] ]
+  \ },
+  \ 'component_function': {
+  \   'gitbranch': 'FugitiveHead', 
+  \   'path': 'f'
+  \ },
+  \ }
 
 " タブ関係
 " タブを空白に置き換える
@@ -56,9 +69,9 @@ set smartindent
 let g:indentLine_char = '|'
 " filetypeごとの設定
 augroup fileTypeIndent
-    autocmd!
-    autocmd BufNewFile,BufRead *.py setlocal tabstop=2 softtabstop=2 shiftwidth=2
-    autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd!
+  autocmd BufNewFile,BufRead *.py setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd BufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup ENDendif
 
 " 検索系
