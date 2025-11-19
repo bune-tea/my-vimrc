@@ -13,6 +13,24 @@ let mapleader = "\<Space>"
 " ヘルプを日本語で表示
 set helplang=ja,en
 
+" 関数定義
+" swの値を入手する
+function! Getsw()
+  return 'sw:' . &shiftwidth
+endfunction
+" 記号付きのFiletypeを返す
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+" 記号付きのFileformatを返す
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
+" 記号付きのGitのbranchを返す
+function! MyGitbranch()
+  return ' ' . FugitiveHead()
+endfunction
+
 " 見た目の設定
 " 行番号の表示
 set number
@@ -40,14 +58,16 @@ let g:lightline = {
   \ 'colorscheme': 'material_vim',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste'],
-  \             [ 'readonly', 'filename', 'filetype', 'modified'] ], 
+  \             [ 'readonly', 'filename', 'filetype', 'sw', 'modified'] ], 
   \   'right': [ [ 'lineinfo' ],
   \              [ 'percent' ],
   \              [ 'gitbranch', 'fileformat', 'fileencoding' ] ]
   \ },
   \ 'component_function': {
-  \   'gitbranch': 'FugitiveHead', 
-  \   'path': 'f'
+  \   'gitbranch': 'MyGitbranch', 
+  \   'sw': 'Getsw',
+  \   'filetype': 'MyFiletype',
+  \   'fileformat': 'MyFileformat'
   \ },
   \ }
 
