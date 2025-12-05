@@ -126,7 +126,7 @@ xnoremap > >gv
 " 英字キーボードように<Leader>;でコマンドラインモードに移行
 nnoremap <Leader>; :
 " <Leader>+hjklで画面移動
-nnoremap <Leader>h <c-w>h
+nnoremap <Leader>hh <c-w>h
 nnoremap <Leader>j <c-w>j
 nnoremap <Leader>k <c-w>k
 nnoremap <Leader>l <c-w>l
