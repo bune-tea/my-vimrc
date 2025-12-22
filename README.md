@@ -15,30 +15,17 @@ $ ln -s vimrc ~/.vimrc
 $ vim -c "JetpackSync"
 ```
 
-# 使用しているプラグイン
-[tani/vim-jetpack](https://github.com/tani/vim-jetpack)
-プラグインを管理してくれる。
-[cohama/lexima.vim](https://github.com/cohama/lexima.vim)
-(や"を自動で補完する
-[itchyny/lightline.vim](https://github.com/itchyny/lightline.vim)
-ステータスラインの装飾
-[preservim/nerdtree](https://github.com/preservim/nerdtree)
-タブツリーの表示
-[ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)
-タブツリーにアイコンを追加
-[tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
-gitを便利に使えるようにするやつ
-[airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
-gitのdiffが行番号の左に見える
-[kaicataldo/material.vim](https://github.com/kaicataldo/material.vim)
-カラースキーム
-[vim-jp/vimdoc-ja](https://github.com/vim-jp/vimdoc-ja)
-ドキュメントの日本語化
-[tomtom/tcomment_vim](https://github.com/tomtom/tcomment_vim)
-コメントON/OFFを手軽に実行
-[sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot)
-言語パック
-[Yggdroot/indentLine](https://github.com/Yggdroot/indentLine)
-インデントを見やすく
-[tpope/vim-surround](https://github.com/tpope/vim-surround)
-''とか()を便利にするやつ
+## 使用しているプラグイン
+- [tani/vim-jetpack](https://github.com/tani/vim-jetpack):プラグインを管理してくれる。
+- [cohama/lexima.vim](https://github.com/cohama/lexima.vim):(や"を自動で補完する
+- [itchyny/lightline.vim](https://github.com/itchyny/lightline.vim):ステータスラインの装飾
+- [preservim/nerdtree](https://github.com/preservim/nerdtree):タブツリーの表示
+- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons):タブツリーにアイコンを追加
+- [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive):gitを便利に使えるようにするやつ
+- [airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter):gitのdiffが行番号の左に見える
+- [kaicataldo/material.vim](https://github.com/kaicataldo/material.vim):カラースキーム
+- [vim-jp/vimdoc-ja](https://github.com/vim-jp/vimdoc-ja):ドキュメントの日本語化
+- [tomtom/tcomment_vim](https://github.com/tomtom/tcomment_vim):コメントON/OFFを手軽に実行
+- [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot):言語パック
+- [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine):インデントを見やすく
+- [tpope/vim-surround](https://github.com/tpope/vim-surround):''とか()を便利にするやつ
