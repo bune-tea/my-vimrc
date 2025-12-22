@@ -95,7 +95,9 @@ augroup fileTypeIndent
 augroup ENDendif
 
 " 検索系
-" 小文字だけで検索したときに大文字小文字を区別しない
+" 大文字小文字を区別せずに検索する
+set ignorecase
+" 大文字が含まれているときは大文字小文字を区別して検索する
 set smartcase
 " 検索コマンドを打ち込んでいる間もパターンを強調する
 set incsearch
