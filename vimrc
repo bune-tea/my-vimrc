@@ -126,6 +126,7 @@ xnoremap > >gv
 " 英字キーボードように<Leader>;でコマンドラインモードに移行
 nnoremap <Leader>; :
 " <Leader>+hjklで画面移動
+" <Leader>hだけ、他のコマンドの候補があるため、<Leader>hhでも動けるように
 nnoremap <Leader>h <c-w>h
 nnoremap <Leader>hh <c-w>h
 nnoremap <Leader>j <c-w>j
@@ -133,7 +134,7 @@ nnoremap <Leader>k <c-w>k
 nnoremap <Leader>l <c-w>l
 
 " その他
-" ターミナルモード移行時に自動的にノーマルモードにする
+" ターミナルモード移行時に自動的にターミナルジョブモードにする
 autocmd WinEnter * if &buftype ==# 'terminal' | normal i
 
 " vim-jetpackでプラグインを管理
