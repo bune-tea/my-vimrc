@@ -29,3 +29,6 @@ $ vim -c "JetpackSync"
 - [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot):言語パック
 - [Yggdroot/indentLine](https://github.com/Yggdroot/indentLine):インデントを見やすく
 - [tpope/vim-surround](https://github.com/tpope/vim-surround):''とか()を便利にするやつ
+
+## マッピング
+vimrcの中に書いてあります。リーダーキーはスペースキーに割り当ててあります。
