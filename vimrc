@@ -70,6 +70,13 @@ let g:lightline = {
   \   'fileformat': 'MyFileformat'
   \ },
   \ }
+" インデントの見た目変更
+let g:indentLine_char = '|'
+" Markdownやjsonで、indentLineを無効にする
+augroup IndentLinePrevention
+  autocmd!
+  autocmd FileType markdown,json IndentLinesDisable | setlocal conceallevel=0
+augroup END
 
 " タブ関係
 " タブを空白に置き換える
@@ -85,8 +92,6 @@ command CT4 set ts=4 sts=4 sw=4
 set autoindent
 " インデントの自動挿入
 set smartindent
-" インデントの見た目変更
-let g:indentLine_char = '|'
 " filetypeごとの設定
 augroup fileTypeIndent
   autocmd!
